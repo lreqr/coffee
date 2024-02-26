@@ -1,0 +1,83 @@
+{{ header }}
+<main class="main checkout-cart-page">
+  <div id="checkout-cart" class="container">
+    {% if attention %}
+      <div class="alert alert-info mt-3" role="alert">
+        {{ attention }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    {% if success %}
+      <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ success }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    {% if error_warning %}
+      <div class="alert alert-warning mt-3" role="alert">
+        {{ error_warning }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div id="content" class="col-lg-12">
+        <h1 class="page-title">{{ heading_title }}</h1>
+        <form action="{{ action }}" method="post" enctype="multipart/form-data">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <td class="text-center">{{ column_image }}</td>
+                <td class="text-left">{{ column_name }}</td>
+                <td class="text-left">{{ column_quantity }}</td>
+                <td class="text-right">{{ column_price }}</td>
+                <td class="text-right">{{ column_total }}</td>
+              </tr>
+              </thead>
+              <tbody>
+
+              {% for product in products %}
+                <tr>
+                  <td class="text-center">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}</td>
+                  <td class="text-left"><a class="active" href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+                    {% if product.option %}
+                      {% for option in product.option %} <br/>
+                        <small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+                    {% endif %}
+                    {% if product.recurring %} <br/>
+                      <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
+                  <td class="text-left"><div class="input-group btn-block product-qty">
+                      <input type="number" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" min="1" max="100" class="form-control">
+                      <span class="input-group-btn">
+                  <button class="btn-update" type="submit" data-toggle="tooltip" title="{{ button_update }}">⭮</button>
+                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn-update" onclick="cart.remove('{{ product.cart_id }}');"><span class="icon-trash"></span></button>
+                  </span></div></td>
+                  <td class="text-right">{{ product.price }}</td>
+                  <td class="text-right">{{ product.total }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-4">
+            <table class="table table-bordered">
+              {% for total in totals %}
+                <tr>
+                  <td class="text-right"><strong>{{ total.title }}:</strong></td>
+                  <td class="text-right">{{ total.text }}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+        <div class="buttons clearfix d-flex">
+          <div class="pull-left"><a href="{{ continue }}" class="btn btn-outline-secondary">{{ button_shopping }}</a></div>
+          <div class="pull-right"><a href="{{ checkout }}" class="btn btn-warning">{{ button_checkout }}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{{ footer }} 

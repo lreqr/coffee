@@ -1,0 +1,38 @@
+{% for filter_group in filter_groups %}
+    <div class="manufacturer-block">
+
+
+        <p class="filter-headline">{{ filter_group.name }}</p>
+        {% for filter in filter_group.filter %}
+            <div class="form-check">
+            <label for="flexCheckDefault" class="form-check-link">{% if filter.filter_id in filter_category %}
+                    <input class="form-check-input" type="checkbox" name="filter[]" value="{{ filter.filter_id }}"
+                           id="flexCheckDefault" checked="checked">
+                    {{ filter.name }}
+                {% else %}
+                    <input class="form-check-input" type="checkbox" name="filter[]" value="{{ filter.filter_id }}"
+                           id="flexCheckDefault">
+                    {{ filter.name }}
+                {% endif %}
+            </label>
+            </div>{% endfor %}
+    </div>
+    <hr>
+{% endfor %}
+
+<button id="button-filter" class="btn btn-outline-secondary">{{ button_filter }}</button>
+
+
+
+
+<script type="text/javascript">
+    $('#button-filter').on('click', function () {
+        filter = [];
+
+        $('input[name^=\'filter\']:checked').each(function (element) {
+            filter.push(this.value);
+        });
+
+        location = '{{ action }}&filter=' + filter.join(',');
+    });
+    //--></script>

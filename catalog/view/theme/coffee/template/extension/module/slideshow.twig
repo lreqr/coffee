@@ -1,0 +1,15 @@
+<!-- hero-section -->
+<section class="hero-section" style="background: url('{{ banners[0].image }}') center no-repeat; background-size: cover;">
+    {% set bannerText = banners[0].title|split('|') %}
+    <div class="container">
+        <div class="hero-section-content">
+            {#     Hero Title       #}
+            <h1>{{ bannerText[0] }}</h1>
+            {#     Hero Text       #}
+            <p>{{ bannerText[1] }}</p>
+            <a class="btn btn-warning" href="{% if banners[0].link %} {{ banners[0].link }} {% endif %}">{{ bannerText[2] }}</a>
+            <a class="btn btn-outline-secondary" href="#targetNews">{{ bannerText[3] }}</a>
+        </div>
+    </div>
+</section>
+

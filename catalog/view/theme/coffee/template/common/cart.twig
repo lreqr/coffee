@@ -1,0 +1,57 @@
+<li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#minicart"
+       aria-controls="offcanvasWithBothOptions"><span class="icon-cart"
+                                                      type="button">{% if products or vouchers %}<span class="cart-dot"></span>{% endif %}</span></a>
+         </li>
+</ul>
+
+
+<div class="offcanvas offcanvas-end mini-cart" tabindex="-1" id="minicart"
+     aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabelCart">Cart</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="in-cart">
+            {% if products or vouchers %}
+                {% for product in products %}
+                    <div class="mini-cart-product-row">
+                        <img src="{{ product.thumb }}" alt="product1_1">
+                        <div class="mini-cart-product-info">
+                            <p class="product-name">
+                                <a href="{{ product.href }}">{{ product.name }}</a>
+                                {% if product.option %}
+                                    {% for option in product.option %} <br/>
+                                        - <small>{{ option.name }} {{ option.value }}</small> {% endfor %}
+                                {% endif %}
+                            </p>
+                            <p class="product-qty"><input type="number" value="{{ product.quantity }}" data-qty="{{ product.quantity }}"
+                                                          data-id="{{ product.product_id }}" data-size="{{ product.option[0].value }}" min="1" max="100"> &times; {{ product.total }}
+                            </p>
+                        </div>
+                        <a href="" class="mini-cart-delete" onclick="return cart.remove('{{ product.cart_id }}');"><span class="icon-trash"></span></a>
+                        <a href="" class="mini-cart-update">⭮</a>
+                    </div>
+                {% endfor %}
+                <hr>
+                <table class="table table-bordered">
+                    {% for total in totals %}
+                        <tr>
+                            <td class="text-right"><strong>{{ total.title }}</strong></td>
+                            <td class="text-right">{{ total.text }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <hr>
+                <div class="mini-cart-btn">
+                    <a href="{{ cart }}" class="btn btn-warning">{{ text_cart }}</a>
+                    <a href="{{ checkout }}" class="btn btn-outline-secondary">{{ text_checkout }}</a>
+                </div>
+            {% else %}
+                <p class="text-start h3">{{ text_empty }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+

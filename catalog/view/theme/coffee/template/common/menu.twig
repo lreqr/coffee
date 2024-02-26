@@ -1,0 +1,7 @@
+{% if categories %}
+<ul class="dropdown-menu dropdown-menu-dark ">
+    {% for category in categories %}
+    <li><a class="dropdown-item" href="{{ category.href }}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}

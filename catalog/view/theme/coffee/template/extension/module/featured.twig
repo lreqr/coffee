@@ -1,0 +1,38 @@
+<!-- Products -->
+<section class="catalog-section">
+    <div class="container">
+        <h2>{{ heading_title }}</h2>
+        <div class="row">
+
+            {% for product in products %}
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-card-img">
+                        <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}"></a>
+                    </div>
+                    <div class="product-card-content">
+                        <h3><a href="{{ product.href }}">{{ product.name }}</a></h3>
+                        <div class="product-bottom">
+                            {% if product.price %}
+                            <div class="product-price">
+                                {% if not product.special %}
+                                    <span>{{ product.price }}</span>
+                                {% else %}
+                                    <span>{{ product.special }}</span>
+                                    <small>{{ product.price }}</small>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="product-actions">
+                                <a href="#" onclick="return wishlist.add('{{ product.product_id }}');"><span class="icon-favorite"></span></a>
+                                <a href="" onclick="return cart.add('{{ product.product_id }}');" class="add-to-cart"><span
+                                            class="icon-cart"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

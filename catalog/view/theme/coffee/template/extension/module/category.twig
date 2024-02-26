@@ -1,0 +1,21 @@
+<div class="category-col">
+    <div class="category-block">
+        <p class="filter-headline">{{ heading_title }}</p>
+        <div class="coffee-category-block">
+            <ul class="coffee-category">
+                {% for category in categories %}
+                    {% if category.category_id == category_id %}
+                        <li><a class="active" href="{{ category.href }}">{{ category.name }}</a></li>
+
+                    {% else %}
+                        <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {# <li><a class="active" href="#">Coffee</a></li> #}
+                {# <li><a href="#">Tea</a></li> #}
+                {# <li><a href="#">Sweets</a></li> #}
+            </ul>
+        </div>
+    </div>
+    <hr>
+</div>

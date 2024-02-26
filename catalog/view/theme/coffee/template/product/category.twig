@@ -1,0 +1,81 @@
+{{ header }}
+<main class="main menu-page">
+
+    <section class="filter-product-section">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="page-title">
+                        {{ heading_title }}
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">{{ column_left }}
+
+                <div class="col-lg-9 col-md-8">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-8 col-sm-12">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text sort-by" for="input-sort">{{ text_sort }}</label>
+                                <select class="form-select sort-by" id="input-sort" onchange="location = this.value;">
+                                    {% for sorts in sorts %}
+                                        {% if sorts.value == '%s-%s'|format(sort, order) %}
+                                            <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+                                        {% else %}
+                                            <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        {% for product in products %}
+                        <div class="col-lg-4 col-sm-6 mb-3">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}"></a>
+                                </div>
+                                <div class="product-card-content">
+                                    <h3><a href="{{ product.href }}">{{ product.name }}</a></h3>
+                                    <div class="product-bottom">
+                                        {% if product.price %}
+                                            <div class="product-price">
+                                                {% if not product.special %}
+                                                    <span>{{ product.price }}</span>
+                                                {% else %}
+                                                    <span>{{ product.special }}</span>
+                                                    <small>{{ product.price }}</small>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                        <div class="product-actions">
+                                            <a href="#" onclick="wishlist.add('{{ product.product_id }}');"><span class="icon-favorite"></span></a>
+                                            <a href="" onclick="return cart.add('{{ product.product_id }}');" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {{ pagination }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+{{ footer }}

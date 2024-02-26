@@ -1,0 +1,21 @@
+{{ header }}
+<main class="main account-page">
+    <div id="account-account" class="container">
+        {% if success %}
+            <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+        {% endif %}
+        <div class="row">
+            <div id="content" class="{{ class }}">
+                <h1>{{ text_my_account }}</h1>
+                <ul class="list-unstyled mb-0">
+                    <li><span class="icon-edit-account"></span><a href="{{ edit }}">{{ text_edit }}</a></li>
+                    <li><span class="icon-password"></span><a href="{{ password }}">{{ text_password }}</a></li>
+                    <li><span class="icon-cart"></span><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+                    <li><span class="icon-delivery"></span><a href="{{ order }}">{{ text_order }}</a></li>
+                    <li><span class="icon-exit"></span><a href="{{ logout }}">{{ text_logout }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+{{ footer }}

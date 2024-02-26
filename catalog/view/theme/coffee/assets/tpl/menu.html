@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="img/icons/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header class="header sticky-top">
+        <!-- header line -->
+        <div class="container">
+            <div class="d-flex justify-content-between header-top">
+                <ul class="languages list-inline m-0">
+                    <li class="list-inline-item"><a href="#">Ua</a></li>
+                    <li class="list-inline-item"><a href="#" class="active">En</a></li>
+                </ul>
+                <a href="tel:+371000000" class="header-tel">+371000000</a>
+            </div>
+
+        </div>
+
+        <!-- header -->
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#navbarOffcanvas" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" id="navbarOffcanvas">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <ul class="navbar-nav mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item nav-dropdown-menu">
+                            <a class="nav-link active" data-bs-toggle="dropdown" aria-expanded="false" href="">Menu</a>
+                            <ul class="dropdown-menu dropdown-menu-dark ">
+                                <li><a class="dropdown-item" href="menu.html">Coffee</a></li>
+                                <li><a class="dropdown-item" href="menu.html">Coffee machines</a></li>
+                                <li><a class="dropdown-item" href="menu.html">Coffee makers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservation.html">Reservation</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a>
+                <div id="nav-icons"></div>
+            </div>
+        </nav>
+
+        <!-- Иконки хедера -->
+        <ul class="header-icons d-none">
+            <li><a href="user.html"><span class="icon-user"></span></a></li>
+            <li><a href="favorite.html"><span class="icon-favorite"></span></a></li>
+            <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptionsCart"
+                   aria-controls="offcanvasWithBothOptions"><span class="icon-cart"
+                                                                  type="button"><span></span></span></a>
+            </li>
+
+        </ul>
+
+        <!-- sidebar Иконок хедера -->
+        <div class="offcanvas offcanvas-end mini-cart" tabindex="-1" id="offcanvasWithBothOptionsCart"
+             aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabelCart">Cart</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mini-cart-product-row">
+                    <img src="img/product1_1.png" alt="product1_1">
+                    <div class="mini-cart-product-info">
+                        <p class="product-name"><a href="product.html">Lavazza Crema E Gusto</a></p>
+                        <p class="product-variation">Xl</p>
+                        <p class="product-qty"><input type="number" value="1" min="1" max="100"></input> &times; $19.99
+                        </p>
+                    </div>
+                    <a href="" class="mini-cart-delete"><span class="icon-trash"></span></a>
+                    <a href="" class="mini-cart-update">⭮</a>
+                </div>
+                <div class="mini-cart-product-row">
+                    <img src="img/product1_1.png" alt="product1_1">
+                    <div class="mini-cart-product-info">
+                        <p class="product-name"><a href="product.html">Lavazza Crema E Gusto</a></p>
+                        <p class="product-variation">Xl</p>
+                        <p class="product-qty"><input type="number" value="1" min="1" max="100"></input> &times; $19.99
+                        </p>
+                    </div>
+                    <a href="" class="mini-cart-delete"><span class="icon-trash"></span></a>
+                    <a href="" class="mini-cart-update">⭮</a>
+                </div>
+                <hr>
+                <h5>Total price: $40.00</h5>
+                <hr>
+                <div class="mini-cart-btn">
+                    <a href="cart.html" class="btn btn-warning">Cart</a>
+                    <a href="cart.html" class="btn btn-outline-secondary">Checkout</a>
+                </div>
+            </div>
+        </div> <!--   sidebar хедера   -->
+    </header>
+
+    <main class="main menu-page">
+
+        <section class="filter-product-section">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-4 category-col">
+
+                        <div class="category-block">
+                            <p class="filter-headline">Categories</p>
+                            <div class="coffee-category-block">
+                                <ul class="coffee-category">
+                                    <li><a href="#">Coffee</a></li>
+                                    <li><a href="#">Tea</a></li>
+                                    <li><a href="#">Sweets</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="manufacturer-block">
+                            <p class="filter-headline">Manufacturer</p>
+                            <div class="form-check">
+                                <label for="flexCheckDefault" class="form-check-link">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    Lavazza</label>
+
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-link"><input class="form-check-input" type="checkbox" value=""
+                                                                      id="flexCheckChecked" checked>
+                                    Trevi
+                                </label>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="size-block">
+
+                            <p class="filter-headline">Size</p>
+
+                            <div class="form-check">
+                                <label class="form-check-link">
+                                    <input class="form-check-input" type="checkbox" value="" id="sizeInnerContent">
+                                    L</label>
+                            </div>
+                            <div class="form-check">
+
+                                <label class="form-check-link">
+                                    <input class="form-check-input" type="checkbox" value="" id="sizeInnerContent1"
+                                           checked>
+                                    Xl</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-link">
+                                    <input class="form-check-input" type="checkbox" value="" id="sizeInnerContent2">
+                                    Xxl</label>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <a href="#" class="btn btn-outline-secondary">Search</a>
+                    </div>
+                    <div class="col-lg-9 col-md-8">
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text sort-by" for="input-sort">Sort by:</label>
+                                    <select class="form-select sort-by" id="input-sort">
+                                        <option selected="">By relevance</option>
+                                        <option value="1">Novelties</option>
+                                        <option value="2">From cheap to expensive</option>
+                                        <option value="2">From expensive to cheap</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product2.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product2.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product2.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="product.html"><img src="img/product1.png" alt=""></a>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h3><a href="product.html">Lavazza coffee</a></h3>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$19.99</span>
+                                                <small>$29.99</small>
+                                            </div>
+                                            <div class="product-actions">
+                                                <a href="#"><span class="icon-favorite"></span></a>
+                                                <a href="" data-bs-toggle="offcanvas"
+                                                   data-bs-target="#offcanvasWithBothOptionsCart"
+                                                   aria-controls="offcanvasWithBothOptions" class="add-to-cart"><span
+                                                        class="icon-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-pagination">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">⇽</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">⇾</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <nav class="footer-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-12 footer-logo-inner">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="logo">
+                            <span>CoffeMeet</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-6 ">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="reservation.html">Reservation</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-6 footer-nav-main">
+                        <ul>
+                            <li><a href="reservation.html">Contacts</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
